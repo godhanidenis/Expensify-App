@@ -9,6 +9,7 @@ import { firebase } from './firebase/firebase';
 import { startSetExpenses } from './actions/expenses';
 import history from './utils/history.js';
 import { login, logout } from './actions/auth';
+import LoadingPage from './components/LoadingPage';
 // Configure redux store first
 const store = configureStore();
 
@@ -19,7 +20,7 @@ const jsx = (
     </Provider>
 );
 
-ReactDOM.render(<p>Loading ....</p>, document.getElementById('app'));
+ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
 let hasRendered = false;
 const renderApp = () => {
@@ -29,7 +30,7 @@ const renderApp = () => {
     }
 };
 
-// Redirect user based on login or logout
+//Redirect user based on login or logout
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         console.log('Logged In');

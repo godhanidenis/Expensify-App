@@ -60,7 +60,7 @@ export const startDeleteExpense = ({ id } = {}) => {
     }
 }
 
-export const updateExpense = (id, updates) => ({
+export const updateExpense = ({id, updates}) => ({
     type: "UPDATE_EXPENSE",
     id,
     updates

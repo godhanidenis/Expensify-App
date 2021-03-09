@@ -35,6 +35,10 @@ module.exports = (env) => {
                             }
                         }
                     ],
+                },
+                {
+                    test: /\.(png|jpg|gif)$/,
+                    loader: 'url-loader'
                 }
             ]
         },
